@@ -3,7 +3,7 @@ var helper = require(__dirname + '/test-helper');
 test('connection event', function () {
 
 	var pool = helper.pg.pools.getOrCreate(helper.config);
-	pool.on('connection', assert.calls(function (client) {
+	pool.on('connected', assert.calls(function (client) {
 		assert.isNull(client);
 	}));
 
